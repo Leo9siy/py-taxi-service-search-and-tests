@@ -15,8 +15,9 @@ class FormsTests(TestCase):
             "last_name": "lastname",
         }
         form = DriverCreationForm(data=form_data)
-        #self.assertTrue(form.is_valid())
-        #self.assertEqual(form.cleaned_data, form_data)
+        self.assertTrue(form.is_valid())
+        self.assertEqual(form.cleaned_data, form_data)
+
 
 class PrivateAuthorTest(TestCase):
     def setUp(self):
@@ -37,5 +38,5 @@ class PrivateAuthorTest(TestCase):
         self.client.post(reverse("taxi:driver-create"), data=form_data)
 
         self.assertEqual(self.user.username, "testuser")
-        #self.assertEqual(self.user.first_name, "test")
-        #self.assertEqual(self.user.last_name, "test")
+        self.assertEqual(self.user.first_name, "test")
+        self.assertEqual(self.user.last_name, "test")

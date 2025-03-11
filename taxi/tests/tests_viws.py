@@ -10,7 +10,6 @@ class ViewTests(TestCase):
     def test_paginate_car_view(self):
         self.assertEqual(CarListView.paginate_by, 5)
 
-
     def test_paginate_driver_view(self):
         self.assertEqual(DriverListView.paginate_by, 5)
 
@@ -34,5 +33,3 @@ class ViewTests(TestCase):
         )
 
         self.assertTemplateUsed(res, "taxi/manufacturer_list.html")
-
-
